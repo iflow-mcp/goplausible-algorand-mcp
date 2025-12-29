@@ -1,5 +1,5 @@
 {
-  "name": "algorand-mcp",
+  "name": "@iflow-mcp/goplausible-algorand-mcp",
   "version": "2.7.8",
   "description": "Algorand Model Context Protocol Implementation",
   "workspaces": [
