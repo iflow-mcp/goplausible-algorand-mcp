@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import {
@@ -33,53 +34,11 @@ class AlgorandMcpServer {
       {
         name,
         version,
-        heartbeatInterval: 15000, // 15 seconds heartbeat interval
-        requestTimeout: 60000,    // 60 seconds request timeout
       },
       {
         capabilities: {
-          resources: {
-            schemas: ResourceManager.schemas
-          },
-          tools: {
-            schemas: {
-              // Account Management Tools
-              ...AccountManager.accountTools.reduce((acc, tool) => ({
-                ...acc,
-                [tool.name]: tool.inputSchema
-              }), {}),
-              // Utility Tools
-              ...UtilityManager.utilityTools.reduce((acc, tool) => ({
-                ...acc,
-                [tool.name]: tool.inputSchema
-              }), {}),
-              // Algod Tools
-              ...AlgodManager.algodTools.reduce((acc, tool) => ({
-                ...acc,
-                [tool.name]: tool.inputSchema
-              }), {}),
-              // Transaction Tools
-              ...transactionTools.reduce((acc, tool) => ({
-                ...acc,
-                [tool.name]: tool.inputSchema
-              }), {}),
-              // API Tools
-              ...apiManager.reduce((acc, tool) => ({
-                ...acc,
-                [tool.name]: tool.inputSchema
-              }), {}),
-              // ARC-26 Tools
-              ...arc26Manager.arc26Tools.reduce((acc, tool) => ({
-                ...acc,
-                [tool.name]: tool.inputSchema
-              }), {}),
-              // Knowledge Tools
-              ...KnowledgeManager.knowledgeTools.reduce((acc, tool) => ({
-                ...acc,
-                [tool.name]: tool.inputSchema
-              }), {})
-            }
-          },
+          resources: {},
+          tools: {},
         },
       }
     );

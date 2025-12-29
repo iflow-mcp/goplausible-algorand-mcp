@@ -1,10 +1,13 @@
 {
-  "name": "@algorand-mcp/server",
+  "name": "@iflow-mcp/goplausible-algorand-mcp",
   "version": "2.7.7",
   "description": "Algorand MCP Server Implementation",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "bin": {
+    "algorand-mcp": "./dist/index.js"
+  },
   "scripts": {
     "build": "tsc && cp -r src/resources/knowledge/taxonomy src/resources/knowledge/taxonomy-categories dist/resources/knowledge/",
     "clean": "rm -rf dist",

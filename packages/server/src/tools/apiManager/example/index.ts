@@ -1,12 +1,11 @@
-import { McpError, ErrorCode, Tool } from '@modelcontextprotocol/sdk/types.js';
+import { McpError, ErrorCode } from '@modelcontextprotocol/sdk/types.js';
 import { getBalanceTool, getBalanceToolSchema } from './get-balance.js';
 
 // Define tool configurations
-export const exampleTools: Tool[] = [
+export const exampleTools = [
   {
     name: 'api_example_get_balance',
     description: 'Get account balance and assets',
-    handler: getBalanceTool,
     inputSchema: getBalanceToolSchema
   }
 ];
